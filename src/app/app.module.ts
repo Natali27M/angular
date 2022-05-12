@@ -20,11 +20,14 @@ import { PostsComponent } from './components/posts/posts.component';
     PostComponent,
     PostsComponent
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule
   ],
+
   providers: [],
+
   bootstrap: [AppComponent]
 })
 
