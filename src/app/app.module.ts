@@ -49,6 +49,7 @@ import { CommentDetailsComponent } from './components/comment-details/comment-de
           {path: 'post-details/:id', component: PostDetailsComponent}
         ]
       },
+
       { path: 'comments-page',
         component: CommentsComponent,
         children: [
