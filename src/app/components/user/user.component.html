@@ -1,0 +1,9 @@
+<p>
+  {{user.id}}) {{user.name}}
+<!--  DDOS-->
+<!--  <a routerLink='user-details/{{user.id}}'>Details</a>-->
+<!--  <a [routerLink]="['user-details', user.id]">Details</a>-->
+
+<!--  <a [routerLink]="['user-details', user.id]" [state]="{data: user}">Details</a>-->
+  <button (click)='navigateMe(user)'>Details</button>
+</p>
