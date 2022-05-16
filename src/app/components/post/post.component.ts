@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {IPost} from "../../interfaces";
+import {PostInterface} from "../../interfaces";
 
 @Component({
   selector: 'app-post',
@@ -11,7 +11,7 @@ import {IPost} from "../../interfaces";
 export class PostComponent implements OnInit {
 
   @Input()
-  post: IPost;
+  post: PostInterface;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
 
@@ -21,7 +21,7 @@ export class PostComponent implements OnInit {
 
   }
 
-  navigateMe(post: IPost) {
+  navigateMe(post: PostInterface) {
     this.router.navigate(['post-details', post.id], {relativeTo: this.activatedRoute, state: {data: post}});
   }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IPostDetails } from 'src/app/interfaces';
+import { PostDetailsInterface } from 'src/app/interfaces';
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
@@ -10,11 +10,11 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class PostDetailsComponent implements OnInit {
 
-  postDetails: IPostDetails;
+  postDetails: PostDetailsInterface;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.params.subscribe(value => {
-      this.postDetails = this.router.getCurrentNavigation()?.extras.state?.['data'] as IPostDetails;
+      this.postDetails = this.router.getCurrentNavigation()?.extras.state?.['data'] as PostDetailsInterface;
       console.log(value);
     });
   }

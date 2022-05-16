@@ -1,8 +1,8 @@
-export * from './IComment';
-export * from './ICompany';
-export * from './IPost';
-export * from './IPostDetails';
-export * from './IUser';
-export * from './IUserDetails';
+export * from './comment.interface';
+export * from './company.interface';
+export * from './post.interface';
+export * from './postDetails.interface';
+export * from './user.interface';
+export * from './userDetails.interface';
 
 

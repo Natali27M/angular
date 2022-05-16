@@ -1,4 +1,4 @@
-import { IUser } from "./IUser";
+import { IUser } from "./user.interface";
 
 export interface IUserDetails extends IUser{
   username: string;

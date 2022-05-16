@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { CommentService } from 'src/app/services';
-import { IComment } from "../../interfaces";
+import { CommentInterface } from "../../interfaces";
 
 @Component({
   selector: 'app-comment-details',
@@ -11,7 +11,7 @@ import { IComment } from "../../interfaces";
 })
 export class CommentDetailsComponent implements OnInit {
 
-  commentDetails: IComment ;
+  commentDetails: CommentInterface ;
 
   constructor(private activatedRoute: ActivatedRoute, private commentService: CommentService) {}
 
