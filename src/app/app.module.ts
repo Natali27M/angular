@@ -9,6 +9,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { PostComponent } from './components/post/post.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PostsComponent } from './components/posts/posts.component';
   ],
 
   imports: [
+    CommonModule,
     BrowserModule,
     HttpClientModule
   ],
