@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { IPost } from 'src/app/interfaces';
+import { PostsService } from "../../services";
+
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  posts: IPost[];
+
+  constructor(private postsService: PostsService) {
+
+  }
 
   ngOnInit(): void {
+    this.postsService.getPosts().subscribe(value => this.posts = value);
   }
 
 }

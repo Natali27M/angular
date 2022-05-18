@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  height: 50px;
+}
+a {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+.active a {
+  color: red;
+  text-decoration: underline;
+}
+
+

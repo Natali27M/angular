@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+}
+.outlet {
+  width: 50%;
+}
+.details {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+

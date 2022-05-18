@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { IUserDetails } from "../../interfaces/user-details.interface";
+import { IUserDetails } from '../../interfaces';
 
 @Component({
   selector: 'app-user-details',
@@ -12,7 +12,7 @@ export class UserDetailsComponent implements OnInit {
 
   userDetails: IUserDetails;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe(value=> {
 
       this.userDetails = this.router.getCurrentNavigation()?.extras.state?.['data'] as IUserDetails;

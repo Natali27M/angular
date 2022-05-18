@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { ITodo } from '../../interfaces';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-todo',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  todo: ITodo;
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+
+  }
 
   ngOnInit(): void {
+
+  }
+
+  navigateMe(todo: ITodo) {
+    this.router.navigate([todo.id], { relativeTo: this.activatedRoute, state: { data: todo } })
+      .then();
   }
 
 }

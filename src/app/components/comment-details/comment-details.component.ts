@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router } from '@angular/router';
+
+import { ICommentDetails } from '../../interfaces';
 
 @Component({
   selector: 'app-comment-details',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentDetailsComponent implements OnInit {
 
-  constructor() { }
+  commentDetails: ICommentDetails;
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.params.subscribe( value =>{
+
+      this.commentDetails = this.router.getCurrentNavigation()?.extras.state?.['data'] as ICommentDetails;
+      console.log(value);
+    })
+  }
 
   ngOnInit(): void {
+
   }
 
 }

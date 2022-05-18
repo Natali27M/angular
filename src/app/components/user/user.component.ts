@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { IUser } from 'src/app/interfaces/user.interface';
 
@@ -15,13 +15,15 @@ export class UserComponent implements OnInit {
   // user: IUser = {id: 0, name: ''};
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+
   }
 
   ngOnInit(): void {
+
   }
 
   navigateMe(user: IUser) {
-    this.router.navigate(['app-user-details', user.id], {relativeTo: this.activatedRoute, state: {data: user}})
+    this.router.navigate([user.id], { relativeTo: this.activatedRoute, state: { data: user } })
       .then();
   }
 

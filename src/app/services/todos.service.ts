@@ -2,20 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { IUser } from '../interfaces';
+import { ITodo } from '../interfaces';
 import { urls } from '../constans';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class TodosService {
 
   constructor(private httpClient: HttpClient) {
 
   }
 
-  getUsers(): Observable<IUser[]> {
-    return this.httpClient.get<IUser[]>(urls.users)
+  getTodos(): Observable<ITodo[]> {
+    return this.httpClient.get<ITodo[]>(urls.todos)
   }
 
 }
+
