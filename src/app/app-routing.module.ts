@@ -3,16 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
-import { LoginComponent } from './modules/login/components/login/login.component';
-import { RegisterComponent } from './modules/register/components/register/register.component';
 import { CarsComponent } from './modules/car/components/cars/cars.component';
 
 const routes: Routes = [
   {path: '', component: MainLayoutComponent,
     children: [
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
-      { path: 'cars', component: CarsComponent }
+      { path: 'login', loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule) },
+      { path: 'register', loadChildren: () => import('./modules/register/register.module').then(m => m.RegisterModule) },
+      { path: 'cars', loadChildren: () => import('./modules/car/car.module').then(m => m.CarModule) }
     ]
   }
 ]
