@@ -28,8 +28,8 @@ export class CarsComponent implements OnInit {
   _createForm(): void {
     this.form = new FormGroup({
       model: new FormControl(null, [Validators.pattern(RegEx.model)]),
-      year: new FormControl(1990, [Validators.pattern(RegEx.year)]),
-      price: new FormControl(0, [Validators.pattern(RegEx.price)])
+      year: new FormControl(1990, [Validators.min(1990), Validators.max(new Date().getFullYear())]),
+      price: new FormControl(0, [Validators.min(0), Validators.max(1000000)])
     })
   }
 

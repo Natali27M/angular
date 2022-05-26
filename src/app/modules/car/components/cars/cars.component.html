@@ -6,8 +6,7 @@
     <div><label class='form'>Year : <input type="text" formControlName="year"></label></div>
     <div><label class='form'>Price : <input type="text" formControlName="price"></label></div>
 
-    <button (click) = 'create()'>{{!carForUpdate? 'create': 'update'}}</button>
-<!--    <button [disabled]='form.invalid' (click) = 'create()'>{{!carForUpdate? 'create': 'update'}}</button>-->
+    <button [disabled]='form.invalid' (click) = 'create()'>{{!carForUpdate? 'create': 'update'}}</button>
 
   </form>
 
