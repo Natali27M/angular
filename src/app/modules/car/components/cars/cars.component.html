@@ -1,21 +1,27 @@
 <div>
-  <form>
-    <div><label>Model : <input type="text" formControlName="model"></label></div>
-    <div><label>Year : <input type="text" formControlName="year"></label></div>
-    <div><label>Price : <input type="text" formControlName="price"></label></div>
-    <button>Create</button>
+
+  <form [formGroup]='form' >
+
+    <div><label class='form'>Model : <input type="text" formControlName="model"></label></div>
+    <div><label class='form'>Year : <input type="text" formControlName="year"></label></div>
+    <div><label class='form'>Price : <input type="text" formControlName="price"></label></div>
+
+    <button (click) = 'create()'>{{!carForUpdate? 'create': 'update'}}</button>
+<!--    <button [disabled]='form.invalid' (click) = 'create()'>{{!carForUpdate? 'create': 'update'}}</button>-->
+
   </form>
-  <div *ngIf="cars" >
-    cars works!
-    <div>{{cars|json}}</div>
+
+  <div class='carsBox'>
+
+    <div *ngFor='let car of cars' class='cars'>
+      <div> {{car.id}}) {{car.model}}-{{car.year}}-{{car.price}}</div>
+
+      <div>
+         <button (click) = 'update(car)'>Update</button>
+         <button (click) = 'delete(car.id)'>Delete</button>
+      </div>
+    </div>
+
   </div>
-
-<!--  <div>-->
-<!--    <app-car *ngFor="let car of cars" [car] = car></app-car>-->
-<!--  </div>-->
-
-<!--  <div>-->
-<!--    <router-outlet></router-outlet>-->
-<!--  </div>-->
 
 </div>

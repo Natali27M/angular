@@ -1,0 +1,13 @@
+.form {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+}
+.carsBox {
+  width: 50%;
+  border: 2px solid black;
+}
+.cars {
+  display: flex;
+  justify-content: space-between;
+}

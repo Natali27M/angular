@@ -4,15 +4,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { CarRoutingModule } from './car-routing.module';
 import { CarsComponent } from './components/cars/cars.component';
-import { CarComponent } from './components/car/car.component';
 import { CarService } from './services';
 import { MainInterceptor } from '../../main.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    CarsComponent,
-    CarComponent
+    CarsComponent
   ],
 
   imports: [
