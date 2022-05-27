@@ -1,2 +1,10 @@
+<!--<h1 *ngIf='user'>{{user.email}}</h1>-->
+<!--<app-users></app-users>-->
+<!--<app-users (userEmit)='catch($event)'></app-users>-->
 
+<h1>{{'hello' | uppercase}}</h1>
+<h1>{{'hello' | custom: 'l': '!'}}</h1>
+<button (click)='changeTitle()'>Push me</button>
+
+<app-inner></app-inner>
 
